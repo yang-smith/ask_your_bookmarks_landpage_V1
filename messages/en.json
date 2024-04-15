@@ -1,0 +1,38 @@
+{
+    "Navbar": {},
+    "Hero": {
+      "TryConvoFree": "Try Convo for Free",
+      "MainTitle": "Speech Focused Language Learning",
+      "MainDescription": "Convo helps you improve your spoken fluency with the help of an AI tutor.",
+      "StartSpeakingButton": "Start Speaking Now"
+    },
+    "ValueProp": {},
+    "Features": {
+      "IntroTitle": "Start your first session in seconds",
+      "IntroDescription": "Improving your spoken fluency has never been easier than with Convo.",
+      "Step1Title": "Sign up for a Free Account",
+      "Step2Title": "Choose a Language & Scenario",
+      "Step3Title": "Start Your Speaking Session"
+    },
+    "Scenarios": {
+      "RealLifeScenariosTitle": "Practice in Real Life Scenarios",
+      "RealLifeScenariosDescription": "Get help if you make a mistake and guidance on saying something in your target language.",
+      "AtTheCafe": "Learn how to order drinks and snacks",
+      "GettingATaxi": "Learn how to navigate and get directions",
+      "SocialActivities": "Learn how to make plans and catch up with friends",
+      "AndManyMore": "and many more..."
+    },
+    "PoweredBy": {
+      "Title": "Powered by",
+      "Description": "These are the technologies behind the scene that make Convo possible",
+      "WhisperAI": "Speech to text",
+      "GPT4": "Comprehensive prompts and responses",
+      "WebSpeech": "Text to speech"
+    },
+    "Feedback": {
+      "Title": "Feedback",
+      "Description": "What are people saying about Convo"
+    },
+    "Footer": {}
+  }
+  
