@@ -109,7 +109,7 @@ export default function Home() {
                   Key Features
                 </h2>
                 <p className="mt-4 text-lg text-gray-600">
-                  Enhance your browsing experience with our smart bookmark management tool.
+                  Enhance your browsing experience with our smart extension.
                 </p>
               </div>
             </div>

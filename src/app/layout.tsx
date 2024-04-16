@@ -5,8 +5,8 @@ import { cn } from "@/src/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Convo | Language Learning",
-  description: "更好的网页收藏夹",
+  title: "Ask Your Bookmarks",
+  description: "Simple and Smart Bookmark Manager. Great AI-powered search capability, find the bookmark you want through fuzzy descriptions.",
 };
 
 export default function RootLayout({
