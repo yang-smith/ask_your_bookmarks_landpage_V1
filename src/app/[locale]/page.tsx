@@ -1,6 +1,7 @@
 import MaxWidthWrapper from "@/src/components/MaxWidthWrapper";
 import { buttonVariants } from "@/src/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/src/components/ui/card";
+import Subscribe from "@/src/components/subscribe/Subscribe";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Home() {
   // const t = useTranslations('Index');
+  const user = null;
   return (
     <>
       <Navbar />
@@ -31,7 +33,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-5 max-w-prose text-lg text-zinc-700 sm:text-2xl">
-          Great AI-powered search capability, find the bookmark you want through fuzzy descriptions.
+        Enhance your browsing with our AI-powered extension. Effortlessly locate bookmarks through intelligent fuzzy search and rediscover hidden gems in your collection.
         </p>
 
         <Link
@@ -164,66 +166,13 @@ export default function Home() {
             </div>
           </div>
 
-
+          <div id="subscribe">
+          <Subscribe user={user}></Subscribe>
+          </div>
+          
 
           {/* Powered By */}
-          <div>
-            <div className="mb-6 px-6 lg:px-8">
-              <div className="mx-auto max-w-2xl sm:text-center">
-                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
-                  Powered by
-                </h2>
-              </div>
-            </div>
 
-            <div className="flex items-center justify-center">
-              <div className="flex flex-col gap-6 md:flex-row">
-                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>Whisper AI</CardTitle>
-                  <CardDescription className="mb-3 text-center">
-                    Speech to text
-                  </CardDescription>
-                  <Image
-                    src="/mic.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
-                </Card>
-                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>GPT 4</CardTitle>
-                  <CardDescription className="mb-3 text-center">
-                    Comprehensive prompts and responses
-                  </CardDescription>
-                  <Image
-                    src="/openai.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
-                </Card>
-
-                <Card className="flex flex-col items-center justify-center gap-2 p-6 md:flex-1">
-                  <CardTitle>WebSpeech</CardTitle>
-                  <CardDescription className="mb-3 text-center">
-                    Text to speech
-                  </CardDescription>
-                  <Image
-                    src="/speaker.webp"
-                    alt="cafe scenario"
-                    width={128}
-                    height={128}
-                    quality={100}
-                    className="rounded-xl"
-                  />
-                </Card>
-              </div>
-            </div>
-          </div>
 
           {/* Feedback */}
           {/* <div>
