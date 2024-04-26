@@ -6,10 +6,22 @@ import { cn } from "@/src/lib/utils";
 import MaxWidthWrapper from "@/src/components/MaxWidthWrapper";
 import { buttonVariants } from "@/src/components/ui/button";
 import { MobileNav } from "@/src/components/MobileNav";
+import { GetServerSideProps } from "next";
+import { getCurrentUser } from "../lib/session";
+import { User } from '@supabase/supabase-js';
 
-const Navbar = () => {
+export const getServerSideProps: GetServerSideProps = async context => {
+  return {
+      props: {
+        user: await getCurrentUser()
+      }
+  };
+};
+
+const Navbar = ({user}: {user: User | undefined}) => {
   // Replace with your auth of choice, e.g. Clerk: const { userId } = auth();
-  const isUserSignedIn = false;
+  const isUserSignedIn = (user != undefined);
+  console.log(user);
 
   return (
     <nav

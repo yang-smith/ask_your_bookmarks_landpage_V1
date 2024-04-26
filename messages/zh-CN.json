@@ -1,38 +1,36 @@
 {
-    "Navbar": {},
-    "Hero": {
-      "TryConvoFree": "Try Convo for Free",
-      "MainTitle": "更好的网页收藏夹",
-      "MainDescription": "Convo helps you improve your spoken fluency with the help of an AI tutor.",
-      "StartSpeakingButton": "Start Speaking Now"
+  "Index": {
+    "navbar": {
+      "home": "首页",
+      "features": "特性",
+      "pricing": "价格",
+      "contact": "联系"
     },
-    "ValueProp": {},
-    "Features": {
-      "IntroTitle": "Start your first session in seconds",
-      "IntroDescription": "Improving your spoken fluency has never been easier than with Convo.",
-      "Step1Title": "Sign up for a Free Account",
-      "Step2Title": "Choose a Language & Scenario",
-      "Step3Title": "Start Your Speaking Session"
+    "hero": {
+      "title": "简单 & 智能",
+      "subtitle": "书签管理器",
+      "cta": "免费试用"
     },
-    "Scenarios": {
-      "RealLifeScenariosTitle": "Practice in Real Life Scenarios",
-      "RealLifeScenariosDescription": "Get help if you make a mistake and guidance on saying something in your target language.",
-      "AtTheCafe": "Learn how to order drinks and snacks",
-      "GettingATaxi": "Learn how to navigate and get directions",
-      "SocialActivities": "Learn how to make plans and catch up with friends",
-      "AndManyMore": "and many more..."
+    "valueProp": {
+      "title": "价值主张",
+      "subtitle": "提升您的浏览体验",
+      "feature1": "智能搜索",
+      "feature2": "个性化学习",
+      "feature3": "AI组织"
     },
-    "PoweredBy": {
-      "Title": "Powered by",
-      "Description": "These are the technologies behind the scene that make Convo possible",
-      "WhisperAI": "Speech to text",
-      "GPT4": "Comprehensive prompts and responses",
-      "WebSpeech": "Text to speech"
+    "features": {
+      "title": "特性",
+      "subtitle": "提升您的浏览体验",
+      "feature1": "智能搜索",
+      "feature2": "个性化学习",
+      "feature3": "AI组织"
     },
-    "Feedback": {
-      "Title": "Feedback",
-      "Description": "What are people saying about Convo"
+    "subscribe": {
+      "title": "订阅",
+      "subtitle": "订阅以获取最新更新和优惠"
     },
-    "Footer": {}
+    "footer": {
+      "copyright": "版权 © 2022"
+    }
   }
-  
+}

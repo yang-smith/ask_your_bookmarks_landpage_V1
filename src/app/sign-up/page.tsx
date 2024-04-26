@@ -5,6 +5,7 @@ import { UserAuthForm } from "@/src/components/UserAuthForm";
 import { getCurrentUser } from "@/src/lib/session";
 import { User } from '@supabase/supabase-js';
 import Image from "next/image";
+import AuthForm from "@/src/components/auth-form";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -20,28 +21,25 @@ export default async function LoginPage() {
         <div className="flex flex-col space-y-2 text-center">
           <Image
             alt="logo"
-            src="/logo.svg"
+            src="/bookmark.png"
             className="sm:w-12 sm:h-12 w-6 h-6 mx-auto"
             width={32}
             height={32}
           />
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Please select your login method.
-          </p>
         </div>
-        <UserAuthForm user={user} />
+        <div className="flex flex-col justify-center">
+          <div className="mx-auto w-auto">
+             <AuthForm view="sign_up" />
+          </div>
+        </div>
         <p className="px-8 text-center text-sm text-muted-foreground">
-          By clicking continue, you agree to our{" "}
+          If you want to sign in click{" "}
           <Link
-            href="/privacy"
+            href="/sign-in"
             className="hover:text-brand underline underline-offset-4"
           >
-            Privacy Policy
+            Here
           </Link>
-          .
         </p>
       </div>
     </div>
