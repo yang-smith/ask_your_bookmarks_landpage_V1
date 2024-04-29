@@ -43,7 +43,7 @@ export default function Home() {
             }),
             "text-lg",
           )}
-          href={"/dashboard"}
+          href={"https://chromewebstore.google.com/detail/ask-your-bookmarks/mdhpopjgachjdhmbkfpfmogompnkekjm"}
         >
           Try for Free
         </Link>

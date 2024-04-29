@@ -45,8 +45,8 @@ const Navbar = () => {
             className="flex z-40 justify-center items-center gap-1"
           >
             <Image
-              src="/logo.png"
-              alt="convo logo"
+              src="/bookmark.png"
+              alt="logo"
               width={50}
               height={50}
               quality={100}

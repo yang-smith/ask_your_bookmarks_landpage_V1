@@ -36,7 +36,7 @@ console.log(session.data.session?.user);
           </div>
         </div>
         <p className="px-8 text-center text-sm text-muted-foreground">
-          If you haven't registered yet, click{" "}
+          If you haven&apos;t registered yet, click{" "}
           <Link
             href="/sign-up"
             className="hover:text-brand underline underline-offset-4"

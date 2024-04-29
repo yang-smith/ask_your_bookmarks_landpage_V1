@@ -15,7 +15,7 @@ export async function POST(request: Request) {
         }
 
         // 通过 API 获取购买链接
-        console.log(process.env.NEXT_PUBLIC_LEMON_SQUEEZY_HOST)
+        // console.log(process.env.NEXT_PUBLIC_LEMON_SQUEEZY_HOST)
         const checkout = (await axios.post(
             `${process.env.NEXT_PUBLIC_LEMON_SQUEEZY_HOST}/checkouts`,
             {

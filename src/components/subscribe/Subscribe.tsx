@@ -10,6 +10,7 @@ import {
 } from "@/src/lib/constants";
 import { CreateCheckoutResponse, SubscribeInfo } from "@/types/subscribe";
 import { UserInfo } from "@/types/user";
+import { createBrowserClient } from "@supabase/ssr";
 import { toast } from "react-hot-toast";
 
 export const subscribeInfo: SubscribeInfo = {
@@ -28,7 +29,7 @@ export const subscribeInfo: SubscribeInfo = {
   },
   membership: {
     isPopular: true,
-    title: "Premium",
+    title: "Early Bird",
     description: "Enhanced with AI capabilities.",
     amount: 19.9,
     expireType: "year",
@@ -50,31 +51,32 @@ export const subscribeInfo: SubscribeInfo = {
 
 export default function Subscribe({ user }: { user: UserInfo | null }) {
   const getStartFreeVersion = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.location.href = 'https://chromewebstore.google.com/detail/mdhpopjgachjdhmbkfpfmogompnkekjm';
   };
   const subscribe = async () => {
-    if (!user || !user.userId) {
-      toast.error("Please login first");
-      return;
-    }
-    try {
-      const { checkoutURL } = await axios.post<any, CreateCheckoutResponse>(
-        "/api/payment/subscribe",
-        {
-          userId: user.userId,
-          type: SUBSCRIPTION_VARIANT_KEY,
-        },
-        {
-          headers: {
-            token: user.accessToken,
-          },
+        try {
+            const supabase = createBrowserClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.NEXT_PUBLIC_SUPABASE_KEY!)
+            const session = await supabase.auth.getSession()
+            console.log(session.data.session?.user);
+            axios.post('/api/payment/subscribe', { user: session.data.session?.user })
+            .then(response => {
+              if (response.data.checkoutURL) {
+                const checkoutURL = response.data.checkoutURL;
+                console.log(checkoutURL);
+                window.location.href = checkoutURL;
+              } else {
+                console.error('No checkout URL in response:', response.data);
+              }
+            })
+            .catch(error => {
+                console.error('Error fetching checkout URL:', error);
+            });
+
+        } catch (err) {
+            console.log(err);
         }
-      );
-      window.location.href = checkoutURL;
-      // window.open(checkoutURL, "_blank", "noopener, noreferrer");
-    } catch (err) {
-      console.log(err);
-    }
   };
   const purchase = async () => {
     if (!user || !user.userId) {

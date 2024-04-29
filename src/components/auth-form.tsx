@@ -12,9 +12,20 @@ export default function AuthForm({view}: {view: ViewType | undefined}) {
     const supabase = createBrowserClient(url, key);
     useEffect(() => {
       const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
-        if (session) {
-          // window.location.href = 'http://localhost:3000';
-            // window.location.href = 'https://bookmarkbot.fun/';
+        switch (event) {
+          case 'SIGNED_IN':
+            // 登录成功后重定向
+            window.location.href = 'https://bookmarkbot.fun/';
+            break;
+          case 'SIGNED_OUT':
+            // 登出后可能不需要做任何事
+            break;
+          case 'USER_UPDATED':
+            // 可能包括密码重置或邮箱验证后的操作
+            break;
+          case 'PASSWORD_RECOVERY':
+            // 密码找回后的操作
+            break;
         }
       });
   
