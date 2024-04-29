@@ -36,14 +36,6 @@ export default function Page() {
 // export default function SubscribePage() {
 //     const [loading, setLoading] = useState(false);
 //     const [message, setMessage] = useState(null);
-//     //   const apiKey = process.env.LEMON_SQUEEZY_API_KEY;
-//     const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NGQ1OWNlZi1kYmI4LTRlYTUtYjE3OC1kMjU0MGZjZDY5MTkiLCJqdGkiOiI5YzM3YjQwYjNkNmM0NTUyYTIzM2EwMjA4MmI0OWQzYmI0YTc5NGUxYTg5ZGNlN2U4NDIxNDU4MTdjY2IwZTZmNjk0Yzc2ODExN2UyM2VhMyIsImlhdCI6MTcxMzQ5MTk0My4wMzE2MzIsIm5iZiI6MTcxMzQ5MTk0My4wMzE2MzUsImV4cCI6MjAyOTAyNDc0My4wMDU2NDMsInN1YiI6IjIwMTIyNDUiLCJzY29wZXMiOltdfQ.qUeJkYXsb7jOzEw3ayEkhTIkZyepFEsU7AnABzRoIBZaVdzIUNmHdsr9Oam5hjZNwsbFx9Ci0ZEv643NBqFP-BkVrI9w7cHm_j1KLDzsst45fVIAIzquUcbGNgDNSh080KMvEu2e-jVl7kGpFum9Hhm67opV0CEOxDbS2196l8zG_yTwHr83-py0OylPSAY4IV2mDlEK6kNibh9WVNJx2QWQpYVCkkUZ28fbyMdG-HqUgjbQtjeXnhZvRhi-C1XnVxjYIq_pRFhZHV8Jrr0JMsnLPh7CjM9y4Q02E11V0e_sx9vrjWNQr6GKPut9W6sqcY-K8mL7AybOq6QZWdaHk04XNq2E5LvnQmPEiuUrMJOZr8LfxuD3cDg4C5j7bMtQYc6-kElRfDfkui0Qz2led3isXWy7pP4iaMfg5tIN9g4oya1PW4iAiUwaSu2wBYLVrrI8VA3Ec64ctq-BJpV5qkmPkoC09TIvuUVAoGdtvTZLwMpWLjyqF6-zoHbruC93'
-
-
-//     lemonSqueezySetup({
-//         apiKey,
-//         onError: (error) => console.error("Error!", error),
-//     });
 
 //     const handleSubscribe = async () => {
 //         console.log(apiKey);
