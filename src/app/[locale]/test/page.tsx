@@ -7,7 +7,6 @@ import supabase from '@/src/lib/supabase';
 import AuthForm from '@/src/components/auth-form';
 import { createBrowserClient } from '@supabase/ssr';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
 import { cookies } from 'next/headers'
  
 export default function Page() {
