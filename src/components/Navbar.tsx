@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,20 +9,28 @@ import { buttonVariants } from "@/src/components/ui/button";
 import { MobileNav } from "@/src/components/MobileNav";
 import { GetServerSideProps } from "next";
 import { getCurrentUser } from "../lib/session";
-import { User } from '@supabase/supabase-js';
+import { cookies } from "next/headers";
 
-export const getServerSideProps: GetServerSideProps = async context => {
-  return {
-      props: {
-        user: await getCurrentUser()
-      }
-  };
-};
 
-const Navbar = ({user}: {user: User | undefined}) => {
+function GetEmail(){
+  const cookieStore = cookies()
+  const value = cookieStore.getAll().map((cookie) => {
+    const regex = /[\w-]+-auth-token$/;
+    if(regex.test(cookie.name)){
+      return cookie.value;
+    }
+  })
+  const valueString = String(value);
+  const emailRegex = /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/;
+  const match = valueString.match(emailRegex);
+
+  return match? match[0] : null;
+}
+
+const Navbar = () => {
   // Replace with your auth of choice, e.g. Clerk: const { userId } = auth();
-  const isUserSignedIn = (user != undefined);
-  console.log(user);
+  const isUserSignedIn = GetEmail()? true : false;
+  const email = GetEmail();
 
   return (
     <nav
@@ -46,7 +55,8 @@ const Navbar = ({user}: {user: User | undefined}) => {
             <span className="text-2xl font-semibold">Ask your bookmarks</span>
           </Link>
           <div className="flex gap-1 sm:gap-4 items-center">
-            {!isUserSignedIn ? (
+          <MobileNav />
+            {/* {!isUserSignedIn ? (
               <MobileNav />
             ) : (
               <Link
@@ -58,7 +68,7 @@ const Navbar = ({user}: {user: User | undefined}) => {
               >
                 Dashboard
               </Link>
-            )}
+            )} */}
 
             <div className="hidden items-center space-x-4 sm:flex">
               {!isUserSignedIn ? (
@@ -92,21 +102,21 @@ const Navbar = ({user}: {user: User | undefined}) => {
                 </>
               ) : (
                 <>
-                  <Link
+                  {/* <Link
                     className={buttonVariants({
                       size: "sm",
                     })}
                     href="/dashboard"
                   >
                     Dashboard
-                  </Link>
+                  </Link> */}
                 </>
               )}
             </div>
 
             {/* User profile mockup below, e.g using Clerk: <UserButton afterSignOutUrl="/" /> */}
             {isUserSignedIn && (
-              <div className="bg-emerald-600 border-2 border-black shadow-lg rounded-full w-10 h-10"></div>
+              <div className="">{email}</div>
             )}
           </div>
         </div>

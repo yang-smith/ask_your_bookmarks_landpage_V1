@@ -13,10 +13,9 @@ import { useTranslations } from 'next-intl';
 
 export default function Home() {
   // const t = useTranslations('Index');
-  const user = null;
   return (
     <>
-      <Navbar />
+      <Navbar/>
 
       {/* Hero */}
       <MaxWidthWrapper className="mt-10 flex flex-col items-center justify-center text-center sm:mt-12">
@@ -167,7 +166,7 @@ export default function Home() {
           </div>
 
           <div id="subscribe">
-          <Subscribe user={user}></Subscribe>
+          <Subscribe user={null}></Subscribe>
           </div>
           
 
