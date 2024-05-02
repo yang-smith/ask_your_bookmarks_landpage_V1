@@ -34,9 +34,7 @@ export function UserAuthForm({ className, user, ...props }: UserAuthFormProps) {
       const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
           })
-          console.log(data);
           const session =   await supabase.auth.getSession()
-          console.log(session);
       setIsGoogleLoading(true);
     }
   };
