@@ -13,6 +13,11 @@ import { UserInfo } from "@/types/user";
 import { createBrowserClient } from "@supabase/ssr";
 import { toast } from "react-hot-toast";
 
+interface CheckoutResponse {
+  checkoutURL: string;
+}
+
+
 export const subscribeInfo: SubscribeInfo = {
   free: {
     title: "Free",
@@ -59,12 +64,12 @@ export default function Subscribe({ user }: { user: UserInfo | null }) {
                 process.env.NEXT_PUBLIC_SUPABASE_URL!,
                 process.env.NEXT_PUBLIC_SUPABASE_KEY!)
             const session = await supabase.auth.getSession()
-            console.log(session.data.session?.user);
-            axios.post('/api/payment/subscribe', { user: session.data.session?.user })
+            // console.log(session.data.session?.user);
+            axios.post<CheckoutResponse>('/api/payment/subscribe', { user: session.data.session?.user })
             .then(response => {
               if (response.data.checkoutURL) {
                 const checkoutURL = response.data.checkoutURL;
-                console.log(checkoutURL);
+                // console.log(checkoutURL);
                 window.location.href = checkoutURL;
               } else {
                 console.error('No checkout URL in response:', response.data);

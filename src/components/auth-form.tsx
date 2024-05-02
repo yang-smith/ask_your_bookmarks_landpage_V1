@@ -58,7 +58,7 @@ export default function AuthForm({view}: {view: ViewType | undefined}) {
             // theme="light"
             showLinks={false}
             socialLayout='horizontal'
-            providers={['google']}
+            providers={[]}
             redirectTo="https://bookmarkbot.fun/"
         />
     )

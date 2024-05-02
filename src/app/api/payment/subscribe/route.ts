@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         )) as Checkout;
         console.log(checkout.data.attributes.url);
 
-        return NextResponse.json({ checkoutURL: checkout.data.attributes.url }, { status: 200 });
+        return NextResponse.json({ data: { checkoutURL: checkout.data.attributes.url } }, { status: 200 });
     } catch (err: any) {
         return NextResponse.json({ message: err.message || err }, { status: 500 });
     }
