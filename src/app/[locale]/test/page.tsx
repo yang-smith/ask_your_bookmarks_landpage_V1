@@ -1,4 +1,4 @@
-
+'use client'
 import { useEffect, useState } from 'react';
 import { getAuthenticatedUser, lemonSqueezySetup } from '@lemonsqueezy/lemonsqueezy.js'
 import axios from 'axios';
@@ -10,25 +10,50 @@ import { useRouter } from 'next/router';
 import { cookies } from 'next/headers'
  
 export default function Page() {
-  const cookieStore = cookies()
-  const value = cookieStore.getAll().map((cookie) => {
-    const regex = /[\w-]+-auth-token$/;
-    if(regex.test(cookie.name)){
-      return cookie.value;
-    }
-  })
-  console.log(value)
-  const valueString = String(value);
-  const emailRegex = /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/;
-  const match = valueString.match(emailRegex);
+  // const cookieStore = cookies()
+  // const value = cookieStore.getAll().map((cookie) => {
+  //   const regex = /[\w-]+-auth-token$/;
+  //   if(regex.test(cookie.name)){
+  //     return cookie.value;
+  //   }
+  // })
+  // console.log(value)
+  // const valueString = String(value);
+  // const emailRegex = /\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/;
+  // const match = valueString.match(emailRegex);
+  // console.log(match ? `Email found: ${match[0]}` : "No email found.");
 
-  console.log(match ? `Email found: ${match[0]}` : "No email found.");
-  return cookieStore.getAll().map((cookie) => (
-    <div key={cookie.name}>
-      <p>Name: {cookie.name}</p>
-      <p>Value: {cookie.value}</p>
+  // return cookieStore.getAll().map((cookie) => (
+  //   <div key={cookie.name}>
+  //     <p>Name: {cookie.name}</p>
+  //     <p>Value: {cookie.value}</p>
+  //   </div>
+  // ))
+  const [response, setResponse] = useState('');
+  const handle = () => {
+    fetch('https://r.jina.ai/https://bookmarkbot.fun', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(res => res.json())  // Convert the response to JSON
+    .then(data => {
+      console.log(data);
+      setResponse(JSON.stringify(data, null, 2));  // Display formatted JSON
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      setResponse('Failed to fetch data');
+    });
+  };
+
+  return (
+    <div>
+      <button onClick={handle}>Test API</button>
+      <pre>{response}</pre>
     </div>
-  ))
+  );
 }
 // export default TestSWR;
 

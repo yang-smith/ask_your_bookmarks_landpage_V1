@@ -10,7 +10,7 @@ const nextIntlMiddleware = createMiddleware({
 
 export async function middleware(request: NextRequest) {
   // 处理国际化仅在页面请求中应用
-  if (!request.nextUrl.pathname.startsWith('/api')) {
+  if (!request.nextUrl.pathname.startsWith('/api') && request.nextUrl.pathname !== '/sitemap.xml') {
     const intlResponse = nextIntlMiddleware(request);
     if (intlResponse) return intlResponse;
   }
@@ -63,9 +63,8 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // 这里需要将两个中间件的matcher配置合并，确保所有相关的路由都被处理
-    '/',
     '/(zh-CN|en)/:path*',
+    '/',
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ]
 };

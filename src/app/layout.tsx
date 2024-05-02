@@ -3,6 +3,9 @@ import { GeistSans } from "geist/font/sans";
 
 import { cn } from "@/src/lib/utils";
 import "./globals.css";
+import GoogleAnalytics from "./GoogleAnalytics";
+import BaiDuAnalytics from "./BaiDuAnalytics";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "Ask Your Bookmarks",
@@ -23,6 +26,15 @@ export default function RootLayout({
         )}
       >
         {children}
+        {process.env.NODE_ENV === "development" ? (
+          <></>
+        ) : (
+          <>
+            <Analytics />
+            <GoogleAnalytics />
+            <BaiDuAnalytics />
+          </>
+        )}
       </body>
     </html>
   );
