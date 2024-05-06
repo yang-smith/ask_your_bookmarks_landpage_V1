@@ -32,7 +32,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-5 max-w-prose text-lg text-zinc-700 sm:text-2xl">
-        Enhance your browsing with our AI-powered extension. Effortlessly locate bookmarks through intelligent fuzzy search and rediscover hidden gems in your collection. (It's in beta right now. Everything is free.)
+        Enhance your browsing with our AI-powered extension. Effortlessly locate bookmarks through intelligent fuzzy search and rediscover hidden gems in your collection. (Beta version right now. Everything is free.)
         </p>
 
         <Link
