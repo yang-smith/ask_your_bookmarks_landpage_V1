@@ -32,7 +32,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-5 max-w-prose text-lg text-zinc-700 sm:text-2xl">
-        Enhance your browsing with our AI-powered extension. Effortlessly locate bookmarks through intelligent fuzzy search and rediscover hidden gems in your collection.
+        Enhance your browsing with our AI-powered extension. Effortlessly locate bookmarks through intelligent fuzzy search and rediscover hidden gems in your collection. (It's in beta right now. Everything is free.)
         </p>
 
         <Link
@@ -163,6 +163,68 @@ export default function Home() {
                 <p className="mt-4 text-lg text-gray-600">and many more...</p>
               </div>
             </div>
+          </div>
+
+          <div>
+            <div className="mb-6 px-6 lg:px-8">
+              <div className="mx-auto max-w-2xl sm:text-center">
+                <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+                  How to use?
+                </h2>
+                {/* <p className="mt-4 text-lg text-gray-600">
+                  Improving your spoken fluency has never been easier than with
+                  Convo.
+                </p> */}
+              </div>
+            </div>
+            {/* steps */}
+
+            <ol className="my-2 space-y-4 pt-2 md:flex md:space-x-6 md:space-y-0 md:px-8">
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 1
+                  </span>
+                  <span className="text-xl font-semibold">
+                    Sign up for a Free Account
+                  </span>
+                  {/* <span className="mt-2 text-zinc-700">
+                Either starting out with a free plan or choose our{" "}
+                <Link
+                  href="/pricing"
+                  className="text-blue-700 underline underline-offset-2"
+                >
+                  pro plan
+                </Link>
+                .
+              </span> */}
+                </div>
+              </li>
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 2
+                  </span>
+                  <span className="text-xl font-semibold">
+                  <span className="text-blue-600">Pin</span> the extension to the top right corner of the browser
+    
+                  </span>
+                </div>
+              </li>
+              <li className="md:flex-1">
+                <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
+                  <span className="text-sm font-medium text-blue-600">
+                    Step 3
+                  </span>
+                  <span className="text-xl font-semibold">
+                    Click the icon to use 
+                  </span>
+                  {/* <span className="mt-2 text-zinc-700">
+                
+              </span> */}
+                </div>
+              </li>
+            </ol>
           </div>
 
           <div id="subscribe">
