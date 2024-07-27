@@ -7,7 +7,7 @@ import Navbar from "@/src/components/Navbar";
 const PrivacyPolicy = () => {
     return (
         <main>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="container flex w-screen flex-col justify-center">
             <ReactMarkdown>{privacyContent}</ReactMarkdown>
             </div>
